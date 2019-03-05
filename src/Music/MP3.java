@@ -111,6 +111,7 @@ public class MP3 {
         if(songLength >= MIN_SONG_RANGE && songLength <= MAX_SONG_RANGE) {
             this.songLength = songLength;
         } else {
+            this.songLength = 0;
             throw new IllegalArgumentException("Song Length must be between " + MIN_SONG_RANGE + " & " + MAX_SONG_RANGE);
         }
     }

@@ -29,11 +29,17 @@ public class MP3Test {
 
     @Test
     public void testRefOutOfRange() {
-        int expected = 0;
+        int num1;
+        num1 = -1;
         MP3 mp3 = new MP3();
-        mp3.setRef(expected);
-        int actual = mp3.getRef();
-        assertEquals(expected, actual);
+        boolean thrown = false;
+        try {
+            mp3.setRef(num1);
+        }catch(Exception e){
+            thrown = true;
+        }
+        assertTrue(thrown);
+        assertEquals(mp3.getRef(),-1);
     }
 
 
@@ -78,22 +84,56 @@ public class MP3Test {
         int num1;
         num1 = 2600;
         MP3 mp3 = new MP3();
-        boolean thrown=false;
+        boolean thrown = false;
         try {
             mp3.setSongLength(num1);
         }catch(Exception e){
-            thrown =true;
+            thrown = true;
         }
         assertTrue(thrown);
         assertEquals(mp3.getSongLength(),0);
     }
 
     @Test
-    public void getSongLength() {
+    public void getRatingInRange() {
+        int expected = 3;
+        MP3 mp3 = new MP3();
+        mp3.setRating(expected);
+        int actual = mp3.getRating();
+        assertEquals(expected, actual);
     }
 
     @Test
-    public void setSongLength() {
+    public void getRatingException()  {
+        int num1;
+        num1 = 0;
+        MP3 mp3 = new MP3();
+        boolean thrown = false;
+        try {
+            mp3.setRating(num1);
+        }catch(Exception e){
+            thrown = true;
+        }
+        assertTrue(thrown);
+        assertEquals(mp3.getRating(),0);
+    }
 
+    @Test
+    public void testMP3Constructor(){
+        int expectedRef = 1;
+        String expectedArtist = "Britney";
+        String expectedSongName = "Hit Me One More Time";
+        int expectedRating = 3;
+        int expectedSongLength = 2400;
+        MP3 mp3 = new MP3(expectedRef,expectedArtist,expectedSongName,expectedRating,expectedSongLength);
+        int actualRef = mp3.getRef();
+        String actualArtist = mp3.getArtist();
+        String actualSongName = mp3.getSongName();
+        int actualRating = mp3.getRating();
+        int actualSongLength = mp3.getSongLength();
+        boolean areAllSame = expectedRef == actualRef && expectedArtist.equals(actualArtist)
+                && expectedSongName.equals(actualSongName) && expectedRating == actualRating
+                && expectedSongLength == actualSongLength;
+        assertTrue(areAllSame);
     }
 }

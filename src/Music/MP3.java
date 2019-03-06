@@ -37,6 +37,7 @@ public class MP3 {
         if (ref >= 0) {
             this.ref = ref;
         } else {
+            this.ref = -1;
             throw new IllegalArgumentException("Ref less than 0");
         }
     }
@@ -90,6 +91,7 @@ public class MP3 {
         if ((rating >= LOWER_RATING) && (rating <= UPPER_RATING)) {
             this.rating = rating;
         } else {
+            this.rating = 0;
             throw new IllegalArgumentException("Rating must be between " + LOWER_RATING + " & " + UPPER_RATING);
         }
     }

@@ -1,5 +1,7 @@
 package Music;
 
+import java.util.ArrayList;
+
 /**
  * This class is designed to be used as part of a digital music system
  * @version 0.1
@@ -156,6 +158,23 @@ public class MP3 {
      */
 
     public MP3(){
+
+    }
+
+    public static void main(String[] args) {
+
+        Integer intW = new Integer(40);
+        int weeInt = intW.intValue();
+        System.out.println(weeInt);
+
+        double weeD = intW.doubleValue();
+        System.out.println(weeD);
+
+        Integer intS = Integer.parseInt("66");
+        System.out.println(intS);
+
+        Double weeD2 = intW.doubleValue() +3.123;
+        System.out.println(weeD2);
 
     }
 

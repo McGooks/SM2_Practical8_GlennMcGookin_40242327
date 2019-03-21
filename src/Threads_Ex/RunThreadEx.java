@@ -1,11 +1,11 @@
-package Threads_Ex1;
+package Threads_Ex;
 
 import java.util.Scanner;
 
-public class RunThreadEx1 {
+public class RunThreadEx {
 
     public static void main(String[] args) {
-        CreateThreadsEx1 threadsEx1 = new CreateThreadsEx1();
+        CreateThreadsEx threadsEx1 = new CreateThreadsEx();
         Thread newThread = new Thread(threadsEx1);
         newThread.start();
         try {

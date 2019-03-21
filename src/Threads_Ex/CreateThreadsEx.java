@@ -1,6 +1,6 @@
-package Threads_Ex1;
+package Threads_Ex;
 
-public class CreateThreadsEx1 implements Runnable {
+public class CreateThreadsEx implements Runnable {
 
     @Override
     public void run() {
